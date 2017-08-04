@@ -12,4 +12,6 @@ try {
 
     require('bootstrap-sass');
     require('chart.js');
+    require('bootstrap-daterangepicker');
+    require('chosen-js');
 } catch (e) {}

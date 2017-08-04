@@ -19,6 +19,8 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
-    "chart.js": "^2.6.0"
+    "bootstrap-daterangepicker": "^2.1.25",
+    "chart.js": "^2.6.0",
+    "chosen-js": "^1.7.0"
   }
 }
