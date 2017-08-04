@@ -14,4 +14,5 @@ try {
     require('chart.js');
     require('bootstrap-daterangepicker');
     require('chosen-js');
+    window.moment = require('moment/moment');
 } catch (e) {}

@@ -26452,20 +26452,20 @@ $(function () {
             };
 
             var initialValue = $el.data('value').split(',');
-            var start = moment.unix(initialValue[0]);
-            var end = moment.unix(initialValue[1]);
+            var start = window.moment.unix(initialValue[0]);
+            var end = window.moment.unix(initialValue[1]);
 
             $el.daterangepicker({
                 autoUpdateInput: true,
                 startDate: start,
                 endDate: end,
                 ranges: {
-                    'Today': [moment(), moment()],
-                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-                    'This Month': [moment().startOf('month'), moment().endOf('month')],
-                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                    'Today': [window.moment(), window.moment()],
+                    'Yesterday': [window.moment().subtract(1, 'days'), window.moment().subtract(1, 'days')],
+                    'Last 7 Days': [window.moment().subtract(6, 'days'), window.moment()],
+                    'Last 30 Days': [window.moment().subtract(29, 'days'), window.moment()],
+                    'This Month': [window.moment().startOf('month'), window.moment().endOf('month')],
+                    'Last Month': [window.moment().subtract(1, 'month').startOf('month'), window.moment().subtract(1, 'month').endOf('month')]
                 }
             }, cb);
 
@@ -26696,6 +26696,7 @@ try {
     __webpack_require__(125);
     __webpack_require__(173);
     __webpack_require__(174);
+    window.moment = __webpack_require__(0);
 } catch (e) {}
 
 /***/ }),

@@ -21,6 +21,7 @@
   "dependencies": {
     "bootstrap-daterangepicker": "^2.1.25",
     "chart.js": "^2.6.0",
-    "chosen-js": "^1.7.0"
+    "chosen-js": "^1.7.0",
+    "moment": "^2.18.1"
   }
 }
