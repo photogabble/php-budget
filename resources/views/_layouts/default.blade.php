@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html>
 <head>
     <title>Budget Calculator - {{ $pageTitle }}</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
@@ -13,13 +13,13 @@
 <nav class="side-navigation">
     <div class="side-navigation__inner">
         <div class="side-navigation__item">
-            <a href="#" class="{{ (request()->is('accounts/*') || request()->is('accounts')) ? 'selected' : '' }}">Accounts</a>
+            <a href="{{ route('accounts.index') }}" class="{{ (request()->is('accounts/*') || request()->is('accounts')) ? 'selected' : '' }}">Accounts</a>
         </div>
         <div class="side-navigation__item">
-            <a href="#" class="{{ (request()->is('categories/*') || request()->is('categories')) ? 'selected' : '' }}">Categories</a>
+            <a href="{{ route('categories.index') }}" class="{{ (request()->is('categories/*') || request()->is('categories')) ? 'selected' : '' }}">Categories</a>
         </div>
         <div class="side-navigation__item">
-            <a href="#" class="{{ (request()->is('reports/*') || request()->is('reports')) ? 'selected' : '' }}">Reports</a>
+            <a href="{{ route('reports') }}" class="{{ (request()->is('reports/*') || request()->is('reports')) ? 'selected' : '' }}">Reports</a>
         </div>
         <div class="side-navigation__item">
             <a href="#" class="{{ (request()->is('budget/*') || request()->is('budget')) ? 'selected' : '' }}">Budget</a>
@@ -37,11 +37,11 @@
             </ol>-->
         </div>
         @if(isset($actionButtons))
-            <div class="pull-right" style="padding-top: 13px;">
-                @foreach($actionButtons as $actionButton)
-                    <a class="btn {{ isset($actionButton['class']) ? $actionButton['class'] : 'btn-default' }}" href="{{ $actionButton['href'] }}" role="button">{{ $actionButton['text'] }}</a>
-                @endforeach
-            </div>
+        <div class="pull-right" style="padding-top: 13px;">
+            @foreach($actionButtons as $actionButton)
+            <a class="btn {{ isset($actionButton['class']) ? $actionButton['class'] : 'btn-default' }}" href="{{ $actionButton['href'] }}" role="button">{{ $actionButton['text'] }}</a>
+            @endforeach
+        </div>
         @endif
     </section>
 
