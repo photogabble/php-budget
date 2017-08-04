@@ -7,3 +7,116 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Profile
+@import "profile.scss";
+
+body{
+  background: #edeff0;
+  color: #999;
+  padding-left: 250px;
+}
+
+.side-navigation{
+  background-color: #19272D;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  z-index: 2;
+  height: 100%;
+  overflow: hidden;
+
+  .side-navigation__inner{
+    padding-top: 50px;
+  }
+
+  .side-navigation__item{
+    width: calc(100% - 25px);
+    padding-left: 25px;
+
+    a{
+      font-size: 1.3em;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      transition: opacity .1s ease-in-out;
+      opacity: .8;
+      display: block;
+      color: #fff;
+      padding: 0 30px 10px 0;
+      font-weight: bold;
+      line-height: 30px;
+      text-decoration: none;
+
+      &:hover{
+        opacity: 1;
+      }
+
+      &.selected{
+        color: #4ebcff;
+      }
+    }
+  }
+}
+
+.wrapper{
+  line-height: 1.5;
+  position: relative;
+  right: 0;
+}
+
+.section__page-title{
+  background: #FFF;
+  padding: 15px 30px;
+  margin-bottom: 15px;
+
+  h1{
+    font-weight: bold;
+    font-size: 1.9em;
+  }
+}
+
+.section__page-body{
+  padding: 15px 30px;
+}
+
+.breadcrumb{
+  background: transparent;
+  padding-left: 0;
+}
+
+.smallstat {
+  background: white;
+  padding: 10px;
+  position: relative;
+
+  .title {
+    top: 12px;
+    color: #c7cbd5;
+    display: block;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .value {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.report-form-toolbar-item.with-bar{
+  position: relative;
+  margin-left: 27px;
+
+  &:before{
+    content: "";
+    width: 1px;
+    background: #c2c2c2;
+    display: block;
+    height: 70%;
+    position: absolute;
+    left: -15px;
+    top: 15%;
+  }
+}

@@ -18,7 +18,7 @@ use Illuminate\Database\Query\Builder;
  * @property int $starting_balance
  * @property int $current_balance
  *
- * @property Transaction[]|null $transactions
+ * @property Transaction[]|Builder|null $transactions
  */
 class Account extends Model
 {
@@ -28,6 +28,24 @@ class Account extends Model
      * @var array
      */
     protected $fillable = ['name', 'starting_balance'];
+
+    /** @var Statistics */
+    private $accountStatistics;
+
+    /**
+     * @param Statistics $accountStatistics
+     */
+    public function setAccountStatistics(Statistics $accountStatistics)
+    {
+        $this->accountStatistics = $accountStatistics;
+    }
+    /**
+     * @return Statistics
+     */
+    public function getAccountStatistics()
+    {
+        return $this->accountStatistics;
+    }
 
     /**
      * @return Transaction|static
