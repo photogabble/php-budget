@@ -22,7 +22,7 @@
             <a href="{{ route('reports') }}" class="{{ (request()->is('reports/*') || request()->is('reports')) ? 'selected' : '' }}">Reports</a>
         </div>
         <div class="side-navigation__item">
-            <a href="#" class="{{ (request()->is('budget/*') || request()->is('budget')) ? 'selected' : '' }}">Budget</a>
+            <a href="{{ route('budgets') }}" class="{{ (request()->is('budgets/*') || request()->is('budgets')) ? 'selected' : '' }}">Budget</a>
         </div>
     </div>
 </nav>

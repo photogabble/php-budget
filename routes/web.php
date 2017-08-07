@@ -61,3 +61,8 @@ Route::get('/reports/{identifier}/create', ['as' => 'reports.create', 'uses' => 
 Route::post('/reports/{identifier}/preview', ['as' => 'reports.preview', 'uses' => 'ReportsController@preview']);
 Route::post('/reports/{identifier}/store', ['as' => 'reports.store', 'uses' => 'ReportsController@store']);
 Route::post('/reports', ['as' => 'reports.update', 'uses' => 'ReportsController@update']);
+
+//
+// Budget
+//
+Route::get('/budgets', ['as' => 'budgets', 'uses' => 'BudgetsController@index']);
