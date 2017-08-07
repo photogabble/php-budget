@@ -27,11 +27,20 @@ class AccountTransactionsController extends Controller
         $this->transactionRepository = $transactionRepository;
     }
 
-    public function index (Account $account)
+    public function index (Account $account, Request $request)
     {
+        if ($request->has('s')){
+            $transactionsFilter = [
+                's' => $request->get('s')
+            ];
+        } else {
+            $transactionsFilter = [];
+        }
+
         return view('accounts.transactions.index')
             ->with('account', $account)
-            ->with('records', $account->transactions('DESC')->get())
+            ->with('records', $this->transactionRepository->findTransactionsForAccount($account, $transactionsFilter))
+            ->with('searchTerm', $request->get('s', ''))
             ->with('actionButtons', [
                 ['class' => 'btn-default', 'href' => route('accounts.index'), 'text' => 'Back'],
                 ['class' => 'btn-default', 'href' => route('accounts.transactions.import', $account->id), 'text' => 'Import'],

@@ -62,6 +62,9 @@ class Transaction extends Model
         }
         $dateFormats = [
             'U',            // Unix time
+            'd/m/Y',        // DD/MM/YYYY
+            'd M Y',        // DD Jan YYYY
+            'd-M-y',        // DD-Jan-YY
             'j-M-y',        // D-Jan-YY
             'j-M-Y',        // D-Jan-YYYY
             'Y-m-d',        // YYYY-MM-DD

@@ -73,7 +73,10 @@ class TransactionsImportController extends Controller
         $headings = [];
 
         foreach ($reader as $index => $row) {
-            if ($index === 0) {
+            if ($index < 4) {
+                continue;
+            }
+            if ($index === 4) {
                 $headings = array_values($row);
                 foreach ($headings as $key => $value) {
                     $headings[$key] = strtolower(str_replace(' ', '_', trim($value)));
