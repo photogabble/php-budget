@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class BudgetController extends Controller
+class BudgetsController extends Controller
 {
     public function index()
     {
-        // ...
+        return view('budgets.index');
     }
 }
