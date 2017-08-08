@@ -44,6 +44,9 @@ Route::post('/accounts/{account}/edit', ['as' => 'accounts.update', 'uses' => 'A
 Route::get('/accounts/{account}/transactions', ['as' => 'accounts.transactions', 'uses' => 'AccountTransactionsController@index']);
 Route::get('/accounts/{account}/transactions/create', ['as' => 'accounts.transactions.create', 'uses' => 'AccountTransactionsController@create']);
 Route::post('/accounts/{account}/transactions/create', ['as' => 'accounts.transactions.store', 'uses' => 'AccountTransactionsController@store']);
+
+Route::post('/accounts/{account}/transactions/group-edit', ['as' => 'accounts.transactions.edit-group', 'uses' => 'AccountTransactionsController@editGroup']);
+
 Route::get('/accounts/{account}/transactions/{transaction}/edit', ['as' => 'accounts.transactions.edit', 'uses' => 'AccountTransactionsController@edit']);
 Route::post('/accounts/{account}/transactions/{transaction}/edit', ['as' => 'accounts.transactions.update', 'uses' => 'AccountTransactionsController@update']);
 //|

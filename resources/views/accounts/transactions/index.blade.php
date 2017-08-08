@@ -27,7 +27,7 @@
         @else
             @foreach($records as $record)
                 <tr>
-                    <td class="text-center" style="width:10px;"><input type="checkbox" name="selectedRow" value="{{ $record->id }}" /></td>
+                    <td class="text-center" style="width:10px;"><input type="checkbox" name="selectedRow" class="selectedRowSelector" value="{{ $record->id }}" /></td>
                     <td class="text-left">{{ $record->date->format('jS M Y') }}</td>
                     <td class="text-left">{{ $record->transaction_type }}</td>
                     <td>

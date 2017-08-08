@@ -2,8 +2,14 @@
     <div class="container-fluid">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-left">
+                <form action="{{ route('accounts.transactions.edit-group', $account) }}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                    <input type="hidden" id="edit-selected-idList" name="idList" value="" />
+                    <button id="edit-selected-btn" class="btn btn-default navbar-btn disabled">Edit Selected</button>
+                </form>
+            </div>
             <form class="navbar-form navbar-right">
-
                 <div class="input-group">
                     <input class="form-control" placeholder="Search for..." name="s" value="{{ $searchTerm }}">
                     <span class="input-group-btn">

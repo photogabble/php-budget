@@ -80,6 +80,10 @@ class AccountTransactionsController extends Controller
             ->with('success', 'Transaction was successfully added.');
     }
 
+    public function editGroup(Account $account, Request $request) {
+        dd($request->get('idList'));
+    }
+
     public function edit(Account $account, Transaction $transaction)
     {
         return view('accounts.transactions.edit')

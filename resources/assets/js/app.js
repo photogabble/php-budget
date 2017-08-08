@@ -279,4 +279,28 @@ $(function () {
             return true;
         });
     });
+
+    var selectedRows = [];
+
+    $(".selectedRowSelector").on('change', function(e){
+        selectedRows = [];
+        $('.selectedRowSelector:checked').each(function(index, value){
+            if (value.value.length > 0) {
+                selectedRows.push(value.value);
+            }
+        });
+
+        if (selectedRows.length > 0) {
+            $("#edit-selected-btn").text('Edit Selected ' + selectedRows.length + ' rows').removeClass('disabled');
+        } else {
+            $("#edit-selected-btn").text('Edit Selected').addClass('disabled');
+        }
+    });
+
+    $("#edit-selected-btn").on('click', function(e){
+        e.preventDefault();
+        if ($(this).hasClass('disabled')) { return; }
+        $('#edit-selected-idList').val(selectedRows.join());
+        $(this).parent().submit();
+    });
 });
