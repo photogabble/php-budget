@@ -27,7 +27,7 @@
                             Edit
                         </a>
                         <div class="header-information">
-                            Kim is a software developer in Microsoft. She works in ASP.NET MVC Team and collaborates with other teams.
+                            {{ $record->description }}
                         </div>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12 profile-stats">

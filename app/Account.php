@@ -15,6 +15,7 @@ use Illuminate\Database\Query\Builder;
  * @property Carbon $updated_at
  * @property string $last_transaction
  * @property string $name
+ * @property string $description
  * @property int $starting_balance
  * @property int $current_balance
  *
@@ -27,7 +28,7 @@ class Account extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'starting_balance'];
+    protected $fillable = ['name', 'starting_balance', 'description'];
 
     /** @var Statistics */
     private $accountStatistics;

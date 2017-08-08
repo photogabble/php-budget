@@ -8,6 +8,14 @@
         @endif
     </div>
 
+    <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+        <label for="description" class="control-label">Description</label>
+        <textarea class="form-control" name="description" id="description" cols="30" rows="3">{{ old('description', $record->description) }}</textarea>
+        @if($error = $errors->first('description'))
+            <span class="help-block">{{ $error }}</span>
+        @endif
+    </div>
+
     <div class="form-group{{ $errors->has('starting_balance') ? ' has-error' : '' }}">
         <label for="starting_balance" class="control-label">Starting Balance</label>
         <div class="input-group">
