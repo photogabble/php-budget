@@ -28,7 +28,7 @@
 </nav>
 
 <div class="wrapper">
-    <section class="section__page-title clearfix">
+    <section class="section__page-title {{ (isset($navBar) && strlen($navBar) > 0) ? '--with-nav-bar ' : '' }}clearfix">
         <div class="pull-left">
             <h1>{!! $pageTitle !!}</h1>
             <!--<ol class="breadcrumb">
@@ -44,6 +44,12 @@
         </div>
         @endif
     </section>
+
+    @if(isset($navBar) && strlen($navBar) > 0)
+    <section class="section__page-navbar clearfix">
+        @include($navBar)
+    </section>
+    @endif
 
     <section class="section__page-body clearfix">
         @if((isset($success) && ! empty($success)) || $success = session('success'))

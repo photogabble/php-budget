@@ -1,20 +1,6 @@
-@extends('_layouts.default', ['pageTitle' => 'Transactions for ' . $account->name . ' <small>(Starting Balance: £'. $account->starting_balance .')</small>'])
+@extends('_layouts.default', ['pageTitle' => 'Transactions for ' . $account->name . ' <small>(Starting Balance: £'. $account->starting_balance .')</small>', 'navBar' => 'accounts.transactions._navbar'])
 
 @section('content')
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" name="s">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
     <table class="table table-condensed table-striped">
         <thead>
         <tr>
@@ -30,7 +16,13 @@
         <tbody>
         @if($records->count() < 1)
             <tr>
-                <td colspan="7">No transactions where found in the database, why not create one.</td>
+                <td colspan="7">
+                    @if(strlen($searchTerm) > 0)
+                    No transactions where found in the database to match the search term <em>"{{ $searchTerm }}"</em>.
+                    @else
+                    No transactions where found in the database, why not create one.
+                    @endif
+                </td>
             </tr>
         @else
             @foreach($records as $record)

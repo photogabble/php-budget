@@ -9487,6 +9487,27 @@ body {
   font-size: 1.9em;
 }
 
+.section__page-title.\--with-nav-bar {
+  margin-bottom: 0;
+}
+
+.section__page-navbar {
+  padding: 0 30px;
+  background: #dcdcdc;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+
+.section__page-navbar .navbar {
+  margin-bottom: 0;
+}
+
+.section__page-navbar .navbar .container-fluid,
+.section__page-navbar .navbar .navbar-collapse {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .section__page-body {
   padding: 15px 30px;
 }
