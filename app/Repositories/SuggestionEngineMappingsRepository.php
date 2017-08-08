@@ -1,8 +1,8 @@
 <?php namespace App\Repositories;
 
-use App\Category;
 use App\SuggestionEngineMappings;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class SuggestionEngineMappingsRepository extends Repository
 {
@@ -63,8 +63,9 @@ class SuggestionEngineMappingsRepository extends Repository
     public function fetchModel($modelName)
     {
         $records = [];
+        /** @var SuggestionEngineMappings|Builder $record */
         foreach($this->model->with('category')->where('modelName',$modelName)->get() as $record) {
-            $records[strtolower(trim($record->category->name))] = $record->model;
+            $records[strtolower(trim($record->category->name))] = $record->getModel();
         }
         return $records;
     }
